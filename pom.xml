@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.c0d3m4513r.pom</groupId>
+        <artifactId>plugins</artifactId>
+        <version>0.1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.c0d3m4513r</groupId>
+    <artifactId>Logger</artifactId>
+    <version>0.0.1</version>
+
+    <licenses>
+        <license>
+            <name>All-Rights-Reserved</name>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/Pixel-gaming/Logger</url>
+        <connection>scm:git</connection>
+    </scm>
+
+    <name>Logger</name>
+    <description>Consolidates different Logger implementations under a slf4j:1.7.15 like interface.</description>
+    <url>https://github.com/Pixel-gaming/Logger</url>
+
+    <developers>
+        <developer>
+            <id>c0d3m4513r</id>
+            <name>C0D3 M4513R</name>
+            <url>https://c0d3m4513r.com/</url>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.15</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>Logger</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
