@@ -37,7 +37,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
 
 
     /**
-     * Creates a new Slf4jLogger.
+     * Creates a new Slf4jLoggerRelocatable
      * For the logger argument, it is assumed, that all methods in the slf4j-api:1.7.15 Logger interface are implemented and accessible,
      * but nevertheless {@link Method#setAccessible(boolean)} will be called to make accesses faster.
      * If the provided object does not implement all method that the slf4j-api:1.7.15 provides, any method may throw a {@link Slf4JImplError}.
@@ -120,7 +120,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
         if (name instanceof String) {
             return (String) name;
         } else {
-            return "Slf4jLogger";
+            return "Slf4jLoggerRelocatable";
         }
     }
 
@@ -145,7 +145,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> trace(@NonNull String msg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> trace(@NonNull String msg) {
         invoke("trace", Params.String, msg);
         return this;
     }
@@ -156,7 +156,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
      */
     @Pure
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> trace(@NonNull String format, @NonNull Object arg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> trace(@NonNull String format, @NonNull Object arg) {
         invoke("trace", Params.StringObject, format, arg);
         return this;
     }
@@ -168,7 +168,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> trace(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> trace(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
         invoke("trace", Params.StringObjectObject, format, arg1, arg2);
         return this;
     }
@@ -180,7 +180,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> trace(@NonNull String format, @NonNull Object @NonNull ... arguments) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> trace(@NonNull String format, @NonNull Object @NonNull ... arguments) {
         invoke("trace", Params.StringObjectArr, format, arguments);
         return this;
     }
@@ -192,7 +192,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> trace(@NonNull String msg, @NonNull Throwable t) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> trace(@NonNull String msg, @NonNull Throwable t) {
         invoke("trace", Params.StringThrowable, msg, t);
         return this;
     }
@@ -217,7 +217,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String msg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String msg) {
         invoke("debug", Params.String, msg);
         return this;
     }
@@ -229,7 +229,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String format, @NonNull Object arg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String format, @NonNull Object arg) {
         invoke("debug", Params.StringObject, format, arg);
         return this;
     }
@@ -241,7 +241,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
         invoke("debug", Params.StringObjectObject, format, arg1, arg2);
         return this;
     }
@@ -253,7 +253,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String format, @NonNull Object @NonNull ... arguments) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String format, @NonNull Object @NonNull ... arguments) {
         invoke("debug", Params.StringObjectArr, format, arguments);
         return this;
     }
@@ -265,7 +265,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String msg, @NonNull Throwable t) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String msg, @NonNull Throwable t) {
         invoke("debug", Params.StringThrowable, msg, t);
         return this;
     }
@@ -290,7 +290,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> info(@NonNull String msg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> info(@NonNull String msg) {
         invoke("info", Params.String, msg);
         return this;
     }
@@ -302,7 +302,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> info(@NonNull String format, @NonNull Object arg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> info(@NonNull String format, @NonNull Object arg) {
         invoke("info", Params.StringObject, format, arg);
         return this;
     }
@@ -314,7 +314,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> info(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> info(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
         invoke("info", Params.StringObjectObject, format, arg1, arg2);
         return this;
     }
@@ -326,7 +326,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> info(@NonNull String format, Object... arguments) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> info(@NonNull String format, Object... arguments) {
         invoke("info", Params.StringObjectArr, format, arguments);
         return this;
     }
@@ -338,7 +338,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> info(@NonNull String msg, @NonNull Throwable t) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> info(@NonNull String msg, @NonNull Throwable t) {
         invoke("info", Params.StringThrowable, msg, t);
         return this;
     }
@@ -363,7 +363,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> warn(@NonNull String msg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> warn(@NonNull String msg) {
         invoke("warn", Params.String, msg);
         return this;
     }
@@ -375,7 +375,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> warn(@NonNull String format, @NonNull Object arg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> warn(@NonNull String format, @NonNull Object arg) {
         invoke("warn", Params.StringObject, format, arg);
         return this;
     }
@@ -387,7 +387,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> warn(@NonNull String format, Object... arguments) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> warn(@NonNull String format, Object... arguments) {
         invoke("warn", Params.StringObjectObject, arguments);
         return this;
     }
@@ -399,7 +399,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
      */
     @Pure
 
-    public @This @lombok.NonNull Slf4jLogger<T> warn(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> warn(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
         invoke("warn", Params.StringObjectObject, format, arg1, arg2);
         return this;
     }
@@ -411,7 +411,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> warn(@NonNull String msg, @NonNull Throwable t) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> warn(@NonNull String msg, @NonNull Throwable t) {
         invoke("warn", Params.StringThrowable, msg, t);
         return this;
     }
@@ -436,7 +436,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String msg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String msg) {
         invoke("error", Params.String, msg);
         return this;
     }
@@ -446,9 +446,8 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
      * @see org.slf4j.Logger#error(String, Object...)
      */
     @Pure
-
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String format, @NonNull Object arg) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String format, @NonNull Object arg) {
         invoke("error", Params.StringObject, format, arg);
         return this;
     }
@@ -458,9 +457,8 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
      * @see org.slf4j.Logger#error(String, Object, Object)
      */
     @Pure
-
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
         invoke("error", Params.StringObjectObject, format, arg1, arg2);
         return this;
     }
@@ -470,9 +468,8 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
      * @see org.slf4j.Logger#error(String, Object...)
      */
     @Pure
-
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String format, Object... arguments) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String format, Object... arguments) {
         invoke("error", Params.StringObjectArr, format, arguments);
         return this;
     }
@@ -484,7 +481,7 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Pure
 
     @Override
-    public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String msg, @NonNull Throwable t) {
+    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String msg, @NonNull Throwable t) {
         invoke("error", Params.StringThrowable, msg, t);
         return this;
     }
