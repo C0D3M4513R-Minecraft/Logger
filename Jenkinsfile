@@ -9,6 +9,10 @@ def getCommitSha() {
     sh "git rev-parse HEAD > .git/current-commit"
     return readFile(".git/current-commit").trim()
 }
+def getBranch(){
+    sh "git branch --no-color --no-column --show-current > .git/branch"
+    return readFile(".git/branch").trim()
+}
 
 void setBuildStatus(String message, String state) {
     repoUrl = getRepoURL()
@@ -39,7 +43,8 @@ pipeline {
         stage('Build') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'c0d3m4513r-deployment', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-                    sh 'mvn -B --settings settings.xml clean deploy -Dusername=$USERNAME -Dpassword=$PASSWORD'
+                    snapshot = getBranch() == "main" ? "" : "-SNAPSHOT"
+                    sh 'mvn -B --settings settings.xml clean deploy -Dusername=$USERNAME -Dpassword=$PASSWORD -Dsnapshot=${snapshot}'
                 }
             }
         }
