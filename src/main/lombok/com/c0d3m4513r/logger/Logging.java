@@ -15,8 +15,8 @@ public class Logging implements LoggerDefaultLevels<Object>{
     private static @NonNull Logger<?> configLogger = noopConfigLogger;
 
     public static void setConfigLogger(@Nullable Logger<?> configLogger) {
-        if (configLogger == null || configLogger instanceof Logging) return;
-        if (configLogger == noopConfigLogger) Logging.configLogger = configLogger;
+        if (configLogger == null || configLogger instanceof Logging) Logging.configLogger = noopConfigLogger;
+        else Logging.configLogger = configLogger;
     }
 
     @lombok.NonNull
