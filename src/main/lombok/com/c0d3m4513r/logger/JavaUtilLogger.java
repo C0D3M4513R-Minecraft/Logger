@@ -11,7 +11,7 @@ import org.checkerframework.dataflow.qual.SideEffectFree;
 @Getter(onMethod_ = {@Pure})
 @EqualsAndHashCode
 @SuppressWarnings("deprecation")
-public class JavaUtilLogger<T extends java.util.logging.Logger> implements LoggerDefaultLevels<T> {
+public class JavaUtilLogger<T extends java.util.logging.Logger> implements LogFlattenArgsDefaultLevels<T> {
     @SideEffectFree
     @SuppressWarnings("purity.not.sideeffectfree.assign.field")
     public JavaUtilLogger(@NonNull T logger) {
@@ -32,39 +32,6 @@ public class JavaUtilLogger<T extends java.util.logging.Logger> implements Logge
     @SuppressWarnings("purity.not.deterministic.call")
     public @This @lombok.NonNull JavaUtilLogger<T> log(@NonNull LogLevel level, @NonNull String msg) {
         logger.log(getLevel(level),msg);
-        return this;
-    }
-
-    @Override
-    @Pure
-    @SuppressWarnings("purity.not.deterministic.call")
-    public @This @lombok.NonNull JavaUtilLogger<T> log(@NonNull LogLevel level, @NonNull String format, @NonNull Object arg) {
-        logger.log(getLevel(level),format,arg);
-        return this;
-    }
-
-    @Override
-    @Pure
-    @SuppressWarnings("purity.not.deterministic.call")
-    public @This @lombok.NonNull JavaUtilLogger<T> log(@NonNull LogLevel level, @NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        logger.log(getLevel(level),format,new Object[]{arg1, arg2});
-        return this;
-    }
-
-    @Override
-    @Pure
-    @SuppressWarnings("purity.not.deterministic.call")
-    public @This @lombok.NonNull JavaUtilLogger<T> log(@NonNull LogLevel level, @NonNull String format, @NonNull Object @NonNull ... arguments) {
-        logger.log(getLevel(level),format,arguments);
-        return this;
-
-    }
-
-    @Override
-    @Pure
-    @SuppressWarnings("purity.not.deterministic.call")
-    public @This @lombok.NonNull JavaUtilLogger<T> log(@NonNull LogLevel level, @NonNull String msg, @NonNull Throwable t) {
-        logger.log(getLevel(level),msg,t);
         return this;
     }
 

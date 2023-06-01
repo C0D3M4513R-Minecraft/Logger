@@ -17,7 +17,7 @@ import org.checkerframework.dataflow.qual.SideEffectFree;
 @SuppressWarnings("deprecation")
 @Value
 @Getter(onMethod_ = {@Pure})
-public class Slf4jLogger<T extends org.slf4j.Logger> implements LoggerDefaultLog<T> {
+public class Slf4jLogger<T extends org.slf4j.Logger> implements LoggerFlattenArgsDefaultLog<T> {
     @ClassBound("org.slf4j.Logger")
     @NonNull
     T logger;
@@ -66,49 +66,6 @@ public class Slf4jLogger<T extends org.slf4j.Logger> implements LoggerDefaultLog
     }
 
     /**
-     * @see org.slf4j.Logger#trace(String, Object)
-     */
-    @Pure
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> trace(@NonNull String format, @NonNull Object arg) {
-        logger.trace(format, arg);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#trace(String, Object, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> trace(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        logger.trace(format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#trace(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> trace(@NonNull String format, @NonNull Object @NonNull ... arguments) {
-        logger.trace(format, arguments);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#trace(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> trace(@NonNull String msg, @NonNull Throwable t) {
-        logger.trace(msg, t);
-        return this;
-    }
-
-    /**
      * @see org.slf4j.Logger#isDebugEnabled()
      */
     @Pure
@@ -126,50 +83,6 @@ public class Slf4jLogger<T extends org.slf4j.Logger> implements LoggerDefaultLog
     @Override
     public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String msg) {
         logger.debug(msg);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#debug(String, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String format, @NonNull Object arg) {
-        logger.debug(format, arg);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#debug(String, Object, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        logger.debug(format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#debug(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String format, @NonNull Object @NonNull ... arguments) {
-        logger.debug(format, arguments);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#debug(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> debug(@NonNull String msg, @NonNull Throwable t) {
-        logger.debug(msg, t);
         return this;
     }
 
@@ -195,50 +108,6 @@ public class Slf4jLogger<T extends org.slf4j.Logger> implements LoggerDefaultLog
     }
 
     /**
-     * @see org.slf4j.Logger#info(String, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> info(@NonNull String format, @NonNull Object arg) {
-        logger.info(format, arg);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#info(String, Object, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> info(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        logger.info(format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#info(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> info(@NonNull String format, Object... arguments) {
-        logger.info(format, arguments);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#info(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> info(@NonNull String msg, @NonNull Throwable t) {
-        logger.info(msg, t);
-        return this;
-    }
-
-    /**
      * @see org.slf4j.Logger#isWarnEnabled()
      */
     @Pure
@@ -260,50 +129,6 @@ public class Slf4jLogger<T extends org.slf4j.Logger> implements LoggerDefaultLog
     }
 
     /**
-     * @see org.slf4j.Logger#warn(String, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> warn(@NonNull String format, @NonNull Object arg) {
-        logger.warn(format, arg);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#warn(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> warn(@NonNull String format, Object... arguments) {
-        logger.warn(format, arguments);
-        return this;
-    }
-
-
-    /**
-     * @see org.slf4j.Logger#warn(String, Object, Object)
-     */
-    @Pure
-
-    public @This @lombok.NonNull Slf4jLogger<T> warn(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        logger.warn(format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#warn(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> warn(@NonNull String msg, @NonNull Throwable t) {
-        logger.warn(msg, t);
-        return this;
-    }
-
-    /**
      * @see org.slf4j.Logger#isErrorEnabled()
      */
     @Pure
@@ -321,50 +146,6 @@ public class Slf4jLogger<T extends org.slf4j.Logger> implements LoggerDefaultLog
     @Override
     public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String msg) {
         logger.error(msg);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#error(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String format, @NonNull Object arg) {
-        logger.error(format, arg);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#error(String, Object, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        logger.error(format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#error(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String format, Object... arguments) {
-        logger.error(format, arguments);
-        return this;
-    }
-
-    /**
-     * @see org.slf4j.Logger#error(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLogger<T> error(@NonNull String msg, @NonNull Throwable t) {
-        logger.error(msg, t);
         return this;
     }
 }
