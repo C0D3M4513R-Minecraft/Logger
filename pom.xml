@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.c0d3m4513r.pom</groupId>
         <artifactId>plugins</artifactId>
-        <version>0.2.0</version>
+        <version>0.2.5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
 
     <groupId>com.c0d3m4513r</groupId>
     <artifactId>Logger</artifactId>
-    <version>1.0.2${snapshot}</version>
+    <version>1.0.3${snapshot}</version>
 
     <licenses>
         <license>
@@ -91,6 +91,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
+                <configuration>
+                    <minimizeJar>true</minimizeJar>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

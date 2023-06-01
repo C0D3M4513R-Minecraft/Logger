@@ -24,7 +24,7 @@ import java.util.HashMap;
 @Value
 @Getter(onMethod_ = {@Pure})
 @AllArgsConstructor(onConstructor_ = {@SuppressWarnings("purity.not.sideeffectfree.assign.field"), @SideEffectFree})
-public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
+public class Slf4jLoggerRelocatable<T> implements LoggerFlattenArgsDefaultLog<T> {
     @NonNull
     T logger;
     @NonNull
@@ -152,53 +152,6 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
 
     /**
      * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#trace(String, Object)
-     */
-    @Pure
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> trace(@NonNull String format, @NonNull Object arg) {
-        invoke("trace", Params.StringObject, format, arg);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#trace(String, Object, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> trace(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        invoke("trace", Params.StringObjectObject, format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#trace(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> trace(@NonNull String format, @NonNull Object @NonNull ... arguments) {
-        invoke("trace", Params.StringObjectArr, format, arguments);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#trace(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> trace(@NonNull String msg, @NonNull Throwable t) {
-        invoke("trace", Params.StringThrowable, msg, t);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
      * @see org.slf4j.Logger#isDebugEnabled()
      */
     @Pure
@@ -219,54 +172,6 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Override
     public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String msg) {
         invoke("debug", Params.String, msg);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#debug(String, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String format, @NonNull Object arg) {
-        invoke("debug", Params.StringObject, format, arg);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#debug(String, Object, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        invoke("debug", Params.StringObjectObject, format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#debug(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String format, @NonNull Object @NonNull ... arguments) {
-        invoke("debug", Params.StringObjectArr, format, arguments);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#debug(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> debug(@NonNull String msg, @NonNull Throwable t) {
-        invoke("debug", Params.StringThrowable, msg, t);
         return this;
     }
 
@@ -297,54 +202,6 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
 
     /**
      * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#info(String, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> info(@NonNull String format, @NonNull Object arg) {
-        invoke("info", Params.StringObject, format, arg);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#info(String, Object, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> info(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        invoke("info", Params.StringObjectObject, format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#info(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> info(@NonNull String format, Object... arguments) {
-        invoke("info", Params.StringObjectArr, format, arguments);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#info(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> info(@NonNull String msg, @NonNull Throwable t) {
-        invoke("info", Params.StringThrowable, msg, t);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
      * @see org.slf4j.Logger#isWarnEnabled()
      */
     @Pure
@@ -370,54 +227,6 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
 
     /**
      * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#warn(String, Object)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> warn(@NonNull String format, @NonNull Object arg) {
-        invoke("warn", Params.StringObject, format, arg);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#warn(String, Object...)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> warn(@NonNull String format, Object... arguments) {
-        invoke("warn", Params.StringObjectObject, arguments);
-        return this;
-    }
-
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#warn(String, Object, Object)
-     */
-    @Pure
-
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> warn(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        invoke("warn", Params.StringObjectObject, format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#warn(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> warn(@NonNull String msg, @NonNull Throwable t) {
-        invoke("warn", Params.StringThrowable, msg, t);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
      * @see org.slf4j.Logger#isErrorEnabled()
      */
     @Pure
@@ -438,51 +247,6 @@ public class Slf4jLoggerRelocatable<T> implements LoggerDefaultLog<T> {
     @Override
     public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String msg) {
         invoke("error", Params.String, msg);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#error(String, Object...)
-     */
-    @Pure
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String format, @NonNull Object arg) {
-        invoke("error", Params.StringObject, format, arg);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#error(String, Object, Object)
-     */
-    @Pure
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String format, @NonNull Object arg1, @NonNull Object arg2) {
-        invoke("error", Params.StringObjectObject, format, arg1, arg2);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#error(String, Object...)
-     */
-    @Pure
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String format, Object... arguments) {
-        invoke("error", Params.StringObjectArr, format, arguments);
-        return this;
-    }
-
-    /**
-     * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
-     * @see org.slf4j.Logger#error(String, Throwable)
-     */
-    @Pure
-
-    @Override
-    public @This @lombok.NonNull Slf4jLoggerRelocatable<T> error(@NonNull String msg, @NonNull Throwable t) {
-        invoke("error", Params.StringThrowable, msg, t);
         return this;
     }
 }
