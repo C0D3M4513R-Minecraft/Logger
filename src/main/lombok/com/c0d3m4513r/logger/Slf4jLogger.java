@@ -17,6 +17,7 @@ import org.checkerframework.dataflow.qual.SideEffectFree;
 @SuppressWarnings("deprecation")
 @Value
 @Getter(onMethod_ = {@Pure})
+@SuppressWarnings({"purity.not.deterministic.call","purity.not.deterministic.not.sideeffectfree.call","purity.not.sideeffectfree.call"})
 public class Slf4jLogger<T extends org.slf4j.Logger> implements LoggerFlattenArgsDefaultLog<T> {
     @ClassBound("org.slf4j.Logger")
     @NonNull
