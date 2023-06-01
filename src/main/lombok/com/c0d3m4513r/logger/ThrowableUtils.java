@@ -11,7 +11,7 @@ public final class ThrowableUtils {
       return toStringWithStacktrace(throwable, new StringBuilder(),"").toString();
    }
 
-   public StringBuilder toStringWithStacktrace(Throwable throwable, StringBuilder sb, String indent) {
+   public static StringBuilder toStringWithStacktrace(Throwable throwable, StringBuilder sb, String indent) {
       sb.append(indent).append(throwable.getClass().getName())
               .append(": ")
               .append(throwable.getLocalizedMessage())
