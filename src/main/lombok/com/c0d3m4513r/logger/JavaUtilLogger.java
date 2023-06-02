@@ -21,6 +21,12 @@ public class JavaUtilLogger<T extends java.util.logging.Logger> implements LogFl
     @NonNull
     T logger;
 
+    @Pure
+    @Override
+    public @NonNull T getLogger() {
+        return logger;
+    }
+
     @Override
     @Pure
     public boolean isLogLevelEnabled(LogLevel level) {
@@ -38,7 +44,7 @@ public class JavaUtilLogger<T extends java.util.logging.Logger> implements LogFl
     @Override
     @Pure
     public @NonNull String getName() {
-        val name = logger.getName();
+        final String name = logger.getName();
         return name != null ? name : "";
     }
 

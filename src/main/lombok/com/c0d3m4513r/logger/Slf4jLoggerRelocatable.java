@@ -138,6 +138,12 @@ public class Slf4jLoggerRelocatable<T> implements LoggerFlattenArgsDefaultLog<T>
         return false;
     }
 
+    @Override
+    @Pure
+    public @NonNull T getLogger() {
+        return logger;
+    }
+
     /**
      * @throws Slf4JImplError if the supplied class or logger is not compatible with at least slf4j-api:1.7.15.
      * @see org.slf4j.Logger#trace(String)
